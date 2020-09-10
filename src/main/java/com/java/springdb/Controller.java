@@ -9,10 +9,10 @@ import java.util.List;
 @RestController
 public class Controller {
     @Autowired
-    Repository fetchData;
+    private ProductRepository repository;
 
     @GetMapping("/")
-    List<ProductModel> getProducts(){
-        return fetchData.findAll();
+    public List<Product> getProducts(){
+        return repository.findAll();
     }
 }
